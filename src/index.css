@@ -11,10 +11,10 @@ body {
 }
 main {
   background-color: beige;
-  height: 500px;
-  width: 600px;
+  height: 550px;
+  width: 700px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -38,8 +38,8 @@ main {
   margin-bottom: 40px;
 }
 .die {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   display: flex;
@@ -53,7 +53,7 @@ main {
 }
 .roll-dice {
   height: 50px;
-  width: 10 50px;
+  width: 110px;
   border: none;
   border-radius: 6px;
   background-color: rgb(181, 100, 56);
