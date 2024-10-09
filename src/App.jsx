@@ -6,6 +6,7 @@ import Confetti from "react-confetti";
 function App() {
   const [dice, setDice] = useState(allNewDice());
   const [tenzies, setTenzies] = useState(false);
+  const [rollCount, setRollCount] = useState(0);
 
   useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
@@ -35,13 +36,13 @@ function App() {
   function rollDice(id) {
     if (!tenzies) {
       setDice((oldDice) =>
-        oldDice.map((die) => {
-          return die.isHeld ? die : generateNewDie();
-        })
+        oldDice.map((die) => (die.isHeld ? die : generateNewDie()))
       );
+      setRollCount((prevCount) => prevCount + 1);
     } else {
       setTenzies(false);
       setDice(allNewDice());
+      setRollCount(0);
     }
   }
 
@@ -72,6 +73,9 @@ function App() {
         Roll until all dice are the same.
         <br /> Click each die to freeze at it's current value between rolls.
       </p>
+      <div className="score-tracker">
+        <h3>Rolls: {rollCount}</h3>
+      </div>
       <div className="dices-container">{diceElements}</div>
       <button onClick={rollDice} className="roll-dice">
         {tenzies ? "New Game" : "Roll Dice"}
